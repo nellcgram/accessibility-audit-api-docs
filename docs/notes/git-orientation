@@ -1,0 +1,33 @@
+# Orientation
+##Repository
+- The repository root is accessibility-audit-api-docs/ — the folder containing
+.github/ , docs/ , and README.md . Every path in this plan (e.g.
+docs/spec/openapi.yaml ) is relative to it.
+- VS Code: New File icon + full path (e.g. docs/spec/openapi.yaml ) creates missing
+folders automatically.
+- Cmd+S saves — an unsaved file is invisible to Git and every tool
+below.
+- Dot files ( .gitignore , .vale.ini ) are normal, just hidden in Finder.
+
+## Commands:
+Terminal: opens at the repo root.
+- pwd confirms where you are
+- ls -a lists everything including dot files.
+
+### Git loop
+
+1. **In Terminal:**
+git checkout main
+git pull
+git checkout -b docs/notes-vocabulary # new branch; name describes the work
+# ...create and edit files, save...
+git add docs/notes/api-vocabulary.md
+git commit -m "Add plain-English API vocabulary notes"
+git push -u origin docs/notes-vocabulary
+
+2. **On GitHub:**
+Compare & pull request → Create pull request → (checks pass, once CI
+exists in Phase 6) → Merge.
+
+**Back in the terminal:**
+git checkout main && git pull .
